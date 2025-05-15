@@ -1,0 +1,10 @@
+<h1>Your Garage 🚗</h1>
+
+<ul>
+  <% @favourites.each do |favourite| %>
+    <li>
+      <%= favourite.car.brand %> - <%= favourite.car.model %>
+      <%= button_to "Remove", favourite_path(favourite), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    </li>
+  <% end %>
+</ul>

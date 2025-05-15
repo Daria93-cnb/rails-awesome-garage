@@ -1,0 +1,16 @@
+<h1><%= @car.brand %></h1>
+<h2><%= @car.model%></h3>
+<p><%= @car.year %></p>
+<p><%= @car.fuel%></p>
+
+<hr>
+<%= simple_form_for [@car, @review] do |f| %>
+  <%= f.input :comment %>
+   <%= f.input :rating, collection: 1..5 %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
+<hr>
+<% @car.reviews.each do |review| %>
+<p><%= '⭐' * review.rating %></p>
+--------------------------------
+<% end %>
