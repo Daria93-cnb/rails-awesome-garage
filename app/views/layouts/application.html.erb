@@ -10,13 +10,20 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <nav>
-      <%= link_to "Home", root_path %> |
-      <%= link_to "My Garage", favourites_path %>
-  </nav>
-  <hr>
+ <body>
+    <header class="navbar">
+      <div class="navbar-left">
+        <%= image_tag("logo.png", alt: "Logo", class: "logo-image") %>
+        <span class="site-title">Awesome Garage</span>
+      </div>
+      <nav class="navbar-right">
+        <%= link_to "Home", root_path, class: "nav-link" %>
+        <%= link_to "My Garage", favourites_path, class: "nav-link" %>
+      </nav>
+    </header>
 
-    <%= yield %>
+    <div class="content">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -14,22 +14,6 @@
         </p>
       </div>
 
-
-<div class="content">
-  <% @cars.each do |car| %>
-    <% brand_image = "#{car.brand.downcase}.jpg" %>
-
-    <section class="card">
-      <div class="card-header">
-        <h2 class="brand"><%= car.brand %></h2>
-        <h3 class="model"><%= car.model %></h3>
-        <p class="timestamp">
-          Owner: <%= car.owner.nickname %> <br>
-          Created: <%= car.created_at.strftime("%A, %d %b %Y %l:%M %p") %><br>
-          Year: <%= car.year %> | Fuel: <%= car.fuel %>
-        </p>
-      </div>
-
       <div class="card-footer">
         <button class="comment-btn">💬 Comment</button>
         <span class="tag">owner<%= car.owner.id %></span>
