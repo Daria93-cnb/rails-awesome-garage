@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to "Home", root_path %> |
+      <%= link_to "My Garage", favourites_path %>
+  </nav>
+  <hr>
+
     <%= yield %>
   </body>
 </html>

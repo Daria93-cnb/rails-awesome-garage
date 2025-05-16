@@ -3,6 +3,14 @@
 <p><%= @car.year %></p>
 <p><%= @car.fuel%></p>
 
+<% if @car.favourites.empty? %>
+<% simple_form_for [@car, @favourite] do |f| %>
+<%= f.submit 'Save in my garage' %>
+<% end %>
+<% else %>
+<p>This car is already in your garage!</p>
+<% end %>
+
 <hr>
 <%= simple_form_for [@car, @review] do |f| %>
   <%= f.input :comment %>
@@ -11,6 +19,10 @@
 <% end %>
 <hr>
 <% @car.reviews.each do |review| %>
+<p><%= review.comment %></p>
 <p><%= '⭐' * review.rating %></p>
 --------------------------------
 <% end %>
+
+<hr>
+<%= link_to "Back to all cars", cars_path %>
